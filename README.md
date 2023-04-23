@@ -132,6 +132,13 @@ OUTPUT IMAGES:
 ![OUTPUT IMAGES 2](https://user-images.githubusercontent.com/86317550/233833140-34798e92-65a6-4b16-a456-6d5cdce9c52c.jpg)
 
   
+  
+  DOWNLOAD FULL README PDF 
+  
+  [README.pdf](https://github.com/ardent-rishi07/RISHI_FRONTEND/files/11303385/README.pdf)
+
+  
+  
   *******************************************
   
   THEIR ARE MINOR CHANGES ALSO 
