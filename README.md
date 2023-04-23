@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# RISHI_FRONTEND
+HAVE FIXED SOME CODE FOR ASSIGMENT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ALL ANSWER ARE README FILE ONLY
 
-## Available Scripts
+QUESTIONS
+1.Explain what the simple List component does.
+2.What problems / warnings are there with code?
+3.Please fix, optimize, and/or modify the component as much as you think is necessary
+_______________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________
+ANSWER 1:
 
-In the project directory, you can run:
+The List component is a simple and reusable component that lets you create a list of selectable items.
+The List component is a component that shows a list of items where each item has some text. It lets you click on an item to choose it, and when you do that, its background color becomes green.
 
-### `npm start`
+To create a list of items, you pass an array of items to the List component. Each item in the array is an object that has a text property. The List component then renders a SingleListItem component for each item.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The SingleListItem component is a special type of component that remembers what it previously rendered and only re-renders if its props have changed. It receives four props:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+index: a number that tells the component which item it's rendering
+isSelected: a boolean that tells the component if it's selected or not
+onClickHandler: a function that's called when the component is clicked
+text: the text that should be shown on the component
+When an item is clicked, the handleClick function is called with the item's index as an argument. This function then updates the selectedIndex state with the index of the clicked item, which changes the background color of the item to green.
+_______________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________
+ANSWER 2
 
-### `npm test`
+  ERROR 1
+***-----***
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In the WrappedSingleListItem component, the onClickHandler prop is being called directly instead of passing it as a function. This will cause the onClick event to be 
+fired immediately on render, which is not the intended behavior. To fix this, the onClickHandler should be passed as a function So the changes required is
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+          --------------------------------------------------------------------------------
+          |     onClick={onClickHandler(index)}                                           |
+          |                                                                               |
+          |                                                                               |
+          |                             to                                               |
+          |                                                                              |
+          |                                                                              |
+          |                                         onClick={handleClick}                |
+          |                                                                              |
+          |                                                                              |
+          |                                                                              |
+          ---------------------------------------------------------------------------------
+          
+          
+          
+              Error 2
+          ***---------***
+          
+          
+          
+          In the WrappedListComponent, the useState hook is not being used correctly. The first element returned by useState should be the initial state value, but in
+          this case, the setter function is being passed as the first element. This can be fixed by changing the useState declaration so the required changes are
+          
+         ---------------------------------------------------------------------------------
+          |                                                                              |
+          |                                                                              |
+          |   const [setSelectedIndex, selectedIndex] = useState();                      |
+          |                                     to                                       |
+          |                                                                              |
+          |                     const [selectedIndex, setSelectedIndex] = useState(null);|
+          |                                                                              |
+          |                                                                              |
+          |                                                                              |
+          --------------------------------------------------------------------------------
+          
+              Error 3
+          ***---------***
+          In the WrappedListComponent, the PropTypes for the items prop are not defined
+          correctly. The PropTypes.array method should be passed a single argument, which is
+          the PropTypes.shapeOf method. The correct PropTypes declaration for items is:
+          
+            --------------------------------------------------------------------------------
+          |                                                                               |
+          |      WrappedListComponent.propTypes = {                                       |
+          |      items: PropTypes.array(PropTypes.shapeOf({                               |
+          |        text: PropTypes.string.isRequired,                                     |
+          |           })),                                                                |
+          |               };                                                              |
+          |             WrappedListComponent.defaultProps = {                             |
+          |                items: null,                                                   |
+          |                 };                                                            |
+          |                                                                               |
+          |                            to                                                 |
+          |                                                                               |
+          |                                                                               |
+          |                                                                               |
+          |        List.propTypes = {                                                     |
+          |          items: PropTypes.arrayOf(                                            |
+          |           PropTypes.shape({                                                   |
+          |      text: PropTypes.string.isRequired,                                       |
+          |           })                                                                  |
+          |              ),                                                               |
+          |               };                                                              |
+          |                                                                               |
+          |           List.defaultProps = {                                               |
+          |              items: null, // set a default value for items                    |
+          |                     };                                                        |
+          ---------------------------------------------------------------------------------
+          
+ ____________________________________________________________________________________________________________________________________________________________________
+ ______________________________________________________________________________________________________________________________________________________________________
+        ANSWER 3
+       **********
+          
+  ***********************************************************************************************************        
+   
+    DOWNLOAD THE FULLCODE BY CLICKING ON EYE.TXT
+          
+[EYE.TXT](https://github.com/ardent-rishi07/RISHI_FRONTEND/files/11303374/EYE.TXT)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+OUTPUT IMAGES:
+1)
+![OUTPUT IMAGES EYE](https://user-images.githubusercontent.com/86317550/233833127-72fae3c4-8e66-4a75-b03b-63c1810956dd.jpg)
 
-### Code Splitting
+2)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![OUTPUT IMAGES 2](https://user-images.githubusercontent.com/86317550/233833140-34798e92-65a6-4b16-a456-6d5cdce9c52c.jpg)
 
-### Analyzing the Bundle Size
+  
+  
+  DOWNLOAD FULL README PDF 
+  
+  [README.pdf](https://github.com/ardent-rishi07/RISHI_FRONTEND/files/11303385/README.pdf)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  
+  
+  *******************************************
+  
+  THEIR ARE MINOR CHANGES ALSO 
+  __________________________________________________________________________________________________________________________________________________________________
+  __________________________________________________________________________________________________________________________________________________________________
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
