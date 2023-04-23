@@ -114,14 +114,14 @@ fired immediately on render, which is not the intended behavior. To fix this, th
           
           
           
-          import React, { useState, useEffect, memo } from 'react';
-          import PropTypes from 'prop-types';
+ import React, { useState, useEffect, memo } from 'react';
+ import PropTypes from 'prop-types';
 
-             // Single List Item
-             const SingleListItem = memo(({ index, isSelected, onClickHandler, text }) => {
-            const handleClick = () => {
-            onClickHandler(index); // pass index to onClickHandler
-              };
+  // Single List Item
+   const SingleListItem = memo(({ index, isSelected, onClickHandler, text }) => {
+     const handleClick = () => {
+ onClickHandler(index); // pass index to onClickHandler
+        };
 
   return (
     <li
@@ -182,6 +182,9 @@ List.defaultProps = {
 export default List;
 
 
+  
+  
+  
   THEIR ARE MINOR CHANGES ALSO 
   __________________________________________________________________________________________________________________________________________________________________
   __________________________________________________________________________________________________________________________________________________________________
