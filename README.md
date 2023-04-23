@@ -112,9 +112,16 @@ fired immediately on render, which is not the intended behavior. To fix this, th
        **********
           
   ***********************************************************************************************************        
-  
+   
+    DOWNLOAD THE FULLCODE BY CLICKING ON EYE.TXT
           
 [EYE.TXT](https://github.com/ardent-rishi07/RISHI_FRONTEND/files/11303374/EYE.TXT)
+
+
+
+
+
+
 
 OUTPUT IMAGES:
 1)
