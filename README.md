@@ -32,7 +32,11 @@ ANSWER 2
 
 
 
-In the WrappedSingleListItem component, the onClickHandler prop is being called directly instead of passing it as a function. This will cause the onClick event to be fired immediately on render, which is not the intended behavior. To fix this, the onClickHandler should be passed as a function So the changes required is
+In the WrappedSingleListItem component, the onClickHandler prop is being called directly instead of passing it as a function. This will cause the onClick event to be 
+fired immediately on render, which is not the intended behavior. To fix this, the onClickHandler should be passed as a function So the changes required is
+
+
+
           --------------------------------------------------------------------------------
           |     onClick={onClickHandler(index)}                                           |
           |                                                                               |
@@ -45,6 +49,9 @@ In the WrappedSingleListItem component, the onClickHandler prop is being called 
           |                                                                              |
           |                                                                              |
           ---------------------------------------------------------------------------------
+          
+          
+          
               Error 2
           ***---------***
           
