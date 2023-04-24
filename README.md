@@ -1,4 +1,9 @@
 # RISHI_FRONTEND
+
+
+LIVE LINK FOR THE PAGE:
+
+https://rishi-steeleye-assigment.netlify.app/
 HAVE FIXED SOME CODE FOR ASSIGMENT
 
 ALL ANSWER ARE README FILE ONLY
